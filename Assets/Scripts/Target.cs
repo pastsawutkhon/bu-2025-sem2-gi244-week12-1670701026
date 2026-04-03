@@ -47,6 +47,8 @@ public class Target : MonoBehaviour, IPointerClickHandler
         Destroy(this.gameObject);
         var gm = FindAnyObjectByType<GameManager>();
         gm.UpdateScore(point);
+
+        Instantiate(explosionParticle, transform.position, Quaternion.identity);
     }
 
     private void OnTriggerEnter(Collider other)
